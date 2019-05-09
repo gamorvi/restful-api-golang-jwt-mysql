@@ -64,10 +64,10 @@ prefix = /api/v1  # API route sub route prefix
 
 # jwt config
 access_token_expire   =  # in minutes, default is 15 minutes if no value is passed
-```
 
 # this is not used yet as I haven't implemented refresh tokens yet # TODO
 `refresh_token_expire  = 72 ` # in hours, default is 48 minutes if no value is passed
+```
 
 ## Running the project
 
