@@ -114,6 +114,8 @@ To be able to login, you need to use the create new user endpoint to set up a us
 
 *** Output ***
 
+Note that the current implementation still returns the encrypted password, this needs to be removed from the response.
+
 ```
 {
     "message": "success",
