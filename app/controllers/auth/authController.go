@@ -22,7 +22,6 @@ type JwtToken struct {
 }
 
 func Login(w http.ResponseWriter, req *http.Request) {
-
 	req.ParseForm()
 	username := req.FormValue("Username")
 	password := req.FormValue("Password")
