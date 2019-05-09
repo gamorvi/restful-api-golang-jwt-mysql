@@ -108,7 +108,8 @@ To be able to login, you need to use the create new user endpoint to set up a us
 ```
 {
 	"Name": "Joe Bloke",
-	"Email": "joe.bloke@fake-domain.com"
+	"Username": "joe.bloke@fake-domain.com",
+  "Password": "secret"
 }
 ```
 
@@ -129,21 +130,25 @@ To be able to login, you need to use the create new user endpoint to set up a us
 }
 ```
 
-2. Get `api/v1/users/1`
+2. Get `api/v1/login`
+
+Remember to use `x-www-form-urlencoded`
+
+*** Input ***
+
+Username: joe.bloke@fake-domain.com
+Password: secret
 
 *** Output ***
 
 ```
 {
     "data": {
-        "ID": 1,
-        "CreatedAt": "2019-05-05T23:54:22Z",
-        "UpdatedAt": "2019-05-05T23:54:22Z",
-        "DeletedAt": null,
-        "Name": "Joe Bloke",
-        "Email": "joe.bloke@fake-domain.com"
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjkwMDAwMDAwMDAwMCwicGFzc3dvcmQiOiJzZWNyZXQiLCJ1c2VybmFtZSI6ImFtYXZpQHh5ei5jb20ifQ.WJ5VMnH5ijHQOZhUlrrnrh7NCYfFpww3jBz26EkRsHQ"
     },
     "message": "success",
     "status": true
 }
 ```
+
+Now make all calls pass the token in the header.
