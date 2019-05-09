@@ -50,28 +50,21 @@ For offline documentation on the following packages run `godoc -http :6060` and 
 ## Setting configuration file
 Create a .env file in the root of the project and set the following parameters
 
-`db_name = database_name` Name of database
-
-`db_user = user`  # Database username
-
-`db_pass = secret` # Database password
-
-`db_type = mysql`   # MySQL driver
-
-`db_host = localhost` # Database host
-
-`db_port = 3306`  # Database port
-
-`charset = utf8` # Database charset
-
-`parse_time = True` # Database parse time
-
-`web_port = 8085`   # Port to serve api
-
-`prefix = /api/v1`  # API route sub route prefix
+```
+db_name = database_name  #Name of database
+db_user = user  # Database username
+db_pass = secret # Database password
+db_type = mysql   # MySQL driver
+db_host = localhost # Database host
+db_port = 3306  # Database port
+charset = utf8 # Database charset
+parse_time = True # Database parse time
+web_port = 8085   # Port to serve api
+prefix = /api/v1  # API route sub route prefix
 
 # jwt config
-`access_token_expire   =  ` # in minutes, default is 15 minutes if no value is passed
+access_token_expire   =  # in minutes, default is 15 minutes if no value is passed
+```
 
 # this is not used yet as I haven't implemented refresh tokens yet # TODO
 `refresh_token_expire  = 72 ` # in hours, default is 48 minutes if no value is passed
