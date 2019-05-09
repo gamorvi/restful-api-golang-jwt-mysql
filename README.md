@@ -1,4 +1,4 @@
-# Golang Restful API using GORM ORM (MySQL), Gorilla Mux, GWT
+# Golang Restful API using GORM ORM (MySQL), Gorilla Mux, JWT
 
 ## Getting Started
 
