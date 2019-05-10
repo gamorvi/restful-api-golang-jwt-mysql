@@ -32,22 +32,13 @@ This is my folder structure under my `$GOPATH` or `$HOME/your_username/go`.
 Ensure you create the `gamorvi` directory in your `github.com` directory. `cd` into the `gamorvi` directory before `git clone https://github.com/gamorvi/restful-api-with-golang.git`
 
 ## Download the packages used to create this rest API
-Run the following Golang commands to install all the necessary packages.
+Run the following Golang commands to install all the necessary packages. These packages will help you set up a web server, ORM for interacting with your db, mysql driver for db connection, load your environment variables from the .env file and generate JWT tokens.
 
 ```
-For creating web server to serve the APIs
 go get -u github.com/gorilla/mux
-
-ORM supports MySQL, SQLite, MSSQL, Postgres
 go get -u github.com/jinzhu/gorm
-
-MySQL driver to enable SQL connection
 go get -u github.com/go-sql-driver/mysql
-
-Loads your environment variables (database, AWS, Redis configurations etc.)
 go get -u github.com/joho/godotenv
-
-Loads your environment variables (database, AWS, Redis configurations etc.)
 go get -u github.com/dgrijalva/jwt-go
 ```
 
