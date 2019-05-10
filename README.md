@@ -135,9 +135,10 @@ Note that the current implementation still returns the encrypted password, this 
 Remember to use `x-www-form-urlencoded`
 
 *** Input ***
-
+```
 Username: joe.bloke@fake-domain.com
 Password: secret
+```
 
 *** Output ***
 
