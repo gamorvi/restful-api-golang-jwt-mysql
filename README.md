@@ -9,25 +9,25 @@ This is my folder structure under my `$GOPATH` or `$HOME/your_username/go`.
 |-- bin
 +-- src
 |   +-- github.com
-|       +-- gamorvi
-|          +-- restapi2
-|             |-- .env
-|             |-- main.go
-|             |-- server.go
-|             |-- .gitignore.go
-|             |-- README.md
-|             +-- app
-|                 +-- controllers
-|                     +-- auth
-|                         |-- authController.go
-|                     |-- usersController.go
-|                 +-- models
-|                     |-- base.go
-|                     |-- user.go
-|             +-- routes
-|                 |-- api.go
-|             +-- utils
-|                 |-- utils.go
+|   |   +-- gamorvi
+|   |   |   +-- restapi2
+|   |   |   |   |-- .env
+|   |   |   |   |-- main.go
+|   |   |   |   |-- server.go
+|   |   |   |   |-- .gitignore.go
+|   |   |   |   |-- README.md
+|   |   |   |   +-- app
+|   |   |   |   |   +-- controllers
+|   |   |   |   |   |   |-- usersController.go
+|   |   |   |   |   +-- auth
+|   |   |   |   |   |   |-- authController.go
+|   |   |   |   +-- models
+|   |   |   |   |   |-- base.go
+|   |   |   |   |   |-- user.go
+|   |   |   |   +-- routes
+|   |   |   |   |   |-- api.go
+|   |   |   |   +-- utils
+|   |   |   |   |   |-- utils.go
 ```
 Ensure you create the `gamorvi` directory in your `github.com` directory. `cd` into the `gamorvi` directory before `git clone https://github.com/gamorvi/restful-api-with-golang.git`
 
@@ -131,7 +131,7 @@ Note that the current implementation still returns the encrypted password, this 
 }
 ```
 
-2. Get `api/v1/login`
+2. Get `api/v1/register`
 
 Remember to use `x-www-form-urlencoded`
 
