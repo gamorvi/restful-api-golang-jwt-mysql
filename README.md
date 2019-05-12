@@ -154,7 +154,7 @@ Note that the current implementation still returns the encrypted password, this 
 }
 ```
 
-Now make all calls pass the token in the header.
+Now make all calls pass the token in the header as a ***Bearer Token***.
 
 ## Hint
 
