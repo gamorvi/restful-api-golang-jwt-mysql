@@ -101,7 +101,7 @@ To be able to login, you need to use the create new user endpoint to set up a us
 
 ### To create a new user
 
-1. POST `api/v1/users`
+1. POST `api/v1/register`
 
 ```
 {
@@ -130,14 +130,16 @@ Note that the current implementation still returns the encrypted password, this 
 }
 ```
 
-2. Get `api/v1/register`
+2. POST `api/v1/login`
 
-Remember to use `x-www-form-urlencoded`
+
 
 *** Input ***
 ```
-Username: joe.bloke@fake-domain.com
-Password: secret
+{
+  "Username": "joe.bloke@fake-domain.com"
+  "Password": "secret"
+}
 ```
 
 *** Output ***
