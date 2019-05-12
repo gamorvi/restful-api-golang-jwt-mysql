@@ -22,6 +22,8 @@ type JwtToken struct {
 	Token string `json:"token"`
 }
 
+var jwt_secret = os.Getenv("jwt_secret")
+
 func Login(w http.ResponseWriter, req *http.Request) {
 	user := &models.User{}
 
@@ -67,7 +69,7 @@ func Login(w http.ResponseWriter, req *http.Request) {
 }
 
 func CreateToken(w http.ResponseWriter, username string, password string, ttl time.Duration) {
-	jwt_secret := os.Getenv("jwt_secret")
+
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"username": username,
 		"exp":      ttl,
@@ -85,7 +87,7 @@ func CreateToken(w http.ResponseWriter, username string, password string, ttl ti
 
 func ValidateMiddleware(next http.HandlerFunc) http.HandlerFunc {
 	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
-		jwt_secret := os.Getenv("jwt_secret")
+
 		authorizationHeader := req.Header.Get("authorization")
 		if authorizationHeader != "" {
 			bearerToken := strings.Split(authorizationHeader, " ")
