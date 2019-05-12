@@ -19,7 +19,7 @@ import (
 )
 
 type JwtToken struct {
-	Token string `json:"token"`
+	AccessToken string `json:"access-token"`
 }
 
 var jwt_secret = os.Getenv("jwt_secret")
@@ -54,7 +54,7 @@ func Login(w http.ResponseWriter, req *http.Request) {
 		u.Respond(w, u.Message(false, "Your credentials do not match our records"))
 		return
 	}
-	// jwt ttl
+	// access token ttl
 	ttl := 2 * time.Minute
 	accessTokenExpire := os.Getenv("access_token_expire")
 	min, err := strconv.Atoi(accessTokenExpire)
@@ -64,7 +64,6 @@ func Login(w http.ResponseWriter, req *http.Request) {
 	if accessTokenExpire != "" {
 		ttl = time.Duration(min) * time.Minute
 	}
-
 	CreateToken(w, username, password, ttl)
 }
 
@@ -80,7 +79,7 @@ func CreateToken(w http.ResponseWriter, username string, password string, ttl ti
 		fmt.Println(error)
 	}
 	resp := u.Message(true, "success")
-	resp["data"] = JwtToken{Token: tokenString}
+	resp["data"] = JwtToken{AccessToken: tokenString}
 	u.Respond(w, resp)
 	return
 }
