@@ -155,3 +155,9 @@ Note that the current implementation still returns the encrypted password, this 
 ```
 
 Now make all calls pass the token in the header.
+
+## Hint
+
+The payload portion (2nd part) of the token can be decode as it is base 64 encoded.
+
+`echo eyJleHAiOjkwMDAwMDAwMDAwMCwicGFzc3dvcmQiOiJzZWNyZXQiLCJ1c2VybmFtZSI6ImFtYXZpQHh5ei5jb20ifQ | base64 -D`
