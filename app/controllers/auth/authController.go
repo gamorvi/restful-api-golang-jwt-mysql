@@ -56,7 +56,6 @@ func CreateToken(w http.ResponseWriter, username string, password string, ttl ti
 	jwt_secret := os.Getenv("jwt_secret")
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"username": username,
-		"password": password,
 		"exp":      ttl,
 	})
 
